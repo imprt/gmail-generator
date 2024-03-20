@@ -1,17 +1,22 @@
 import random
-chars='abcdefghijklmnopqrstuvwxyz1234567890'
-loginen=random.randint(4,15)
-login=''
-for i in range (loginen):
-    pos=random.randint(0,len(chars)-1)
-    login=login+chars[pos]
-if login [0].isnumeric():
-    pos=random.randint(0,len(chars)-10)
-    login=chars[pos]+login
-servers=['@gmail', '@yahoo', '@redmail', '@hotmail']
-servpos=random.randint(0,len(servers)-1)
-email=login+servers[servpos]
-tlds=['.com']
-tldpos=random.randint(0,len(tlds)-1)
-email=email+tlds[tldpos]
-print(email)
+import time
+
+chars = 'abcdefghijklmnopqrstuvwxyz1234567890'
+servers = ['@gmail']
+tlds = ['.com']
+
+while True:
+    login_len = random.randint(4, 15)
+    login = ''.join(random.choice(chars) for _ in range(login_len))
+
+    if login[0].isnumeric():
+        login = random.choice(chars[:-10]) + login
+
+    servpos = random.randint(0, len(servers) - 1)
+    tldpos = random.randint(0, len(tlds) - 1)
+
+    email = login + servers[servpos] + tlds[tldpos]
+    print(email)
+
+    time.sleep(1)
+
