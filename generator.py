@@ -16,7 +16,7 @@ while True:
     tldpos = random.randint(0, len(tlds) - 1)
 
     email = login + servers[servpos] + tlds[tldpos]
-    print(email)
+    print('Gmail -->', email)
 
     time.sleep(1)
 
